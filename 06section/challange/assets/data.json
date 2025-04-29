@@ -1,0 +1,28 @@
+{
+    "social_media": [
+      {
+        "cardText": "GitHub",
+        "link": "https://github.com/codeMaestroLucas",
+        "cardImagePath": "assets/icons/github.png",
+        "backgroundColor": 4279374354
+      },
+      {
+        "cardText": "Gmail",
+        "link": "lucas.samuel.ads@gmail.com",
+        "cardImagePath": "assets/icons/gmail.png",
+        "backgroundColor": 4293321727
+      },
+      {
+        "cardText": "LinkedIn",
+        "link": "https://www.linkedin.com/in/lucas-samuel-64846a253/",
+        "cardImagePath": "assets/icons/linkedin.png",
+        "backgroundColor": 4282432698
+      },
+      {
+        "cardText": "Whatsapp",
+        "link": "+55 11 9 9999-9999",
+        "cardImagePath": "assets/icons/whatsapp.png",
+        "backgroundColor": 4283217996
+      }
+    ]
+  }
