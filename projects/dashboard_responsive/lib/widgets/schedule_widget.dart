@@ -12,11 +12,13 @@ class ScheduleWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Scheduled',
           style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
         ),
+
         const SizedBox(height: 12),
+
         for (var index = 0; index < data.schedules.length; index++)
           CustomCard(
             color: Colors.black,
@@ -44,7 +46,7 @@ class ScheduleWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                Icon(Icons.more),
+                const Icon(Icons.more),
               ],
             ),
           ),

@@ -1,4 +1,4 @@
-import 'package:dashboard_responsive/constraints/theme/app_colors.dart';
+import 'package:dashboard_responsive/themes/app_colors.dart';
 import 'package:dashboard_responsive/data/line_chart_data.dart';
 import 'package:dashboard_responsive/util/responsive.dart';
 import 'package:dashboard_responsive/widgets/custom_card_widget.dart';
@@ -18,7 +18,7 @@ class LineChartWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             "Steps Overview",
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
           ),

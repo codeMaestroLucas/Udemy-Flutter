@@ -1,4 +1,4 @@
-import 'package:dashboard_responsive/constraints/theme/app_colors.dart';
+import 'package:dashboard_responsive/themes/app_colors.dart';
 import 'package:dashboard_responsive/data/side_menu.dart';
 import 'package:dashboard_responsive/models/menu_model.dart';
 import 'package:flutter/material.dart';
@@ -30,8 +30,9 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
 
   Widget buildMenuEntry(MenuModel item, int index) {
     final bool isSelected = currentItem == index;
+
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 4),
+      margin: const EdgeInsets.symmetric(vertical: 4),
       decoration: BoxDecoration(
         color: isSelected ? AppColors.selection : Colors.transparent,
         borderRadius: BorderRadius.circular(8),

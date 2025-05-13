@@ -9,14 +9,15 @@ class ActivityCardsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final heathDetails = HeathDetails();
+    bool isMobile = Responsive.isMobile(context);
 
     return GridView.builder(
       itemCount: heathDetails.heathData.length,
       shrinkWrap: true,
       physics: const ScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: Responsive.isMobile(context) ? 2 : 4,
-        crossAxisSpacing: Responsive.isMobile(context) ? 8 : 16,
+        crossAxisCount: isMobile ? 2 : 4,
+        crossAxisSpacing: isMobile ? 8 : 16,
         mainAxisSpacing: 8,
       ),
       itemBuilder:
@@ -24,6 +25,7 @@ class ActivityCardsWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
+          
               children: [
                 Image.asset(
                   heathDetails.heathData[index].icon,

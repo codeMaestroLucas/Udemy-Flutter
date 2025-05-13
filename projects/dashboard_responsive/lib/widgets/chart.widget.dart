@@ -25,12 +25,12 @@ class Chart extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   '70%',
                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.w600),
                 ),
 
-                Text(
+                const Text(
                   'of 100%',
                 ),
               ],

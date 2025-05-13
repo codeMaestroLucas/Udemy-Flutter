@@ -1,4 +1,4 @@
-import 'package:dashboard_responsive/constraints/theme/app_colors.dart';
+import 'package:dashboard_responsive/themes/app_colors.dart';
 import 'package:dashboard_responsive/util/responsive.dart';
 import 'package:flutter/material.dart';
 

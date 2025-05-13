@@ -1,4 +1,4 @@
-import 'package:dashboard_responsive/constraints/theme/app_colors.dart';
+import 'package:dashboard_responsive/themes/app_colors.dart';
 import 'package:dashboard_responsive/widgets/chart.widget.dart';
 import 'package:dashboard_responsive/widgets/schedule_widget.dart';
 import 'package:dashboard_responsive/widgets/summary_details_widget.dart';
