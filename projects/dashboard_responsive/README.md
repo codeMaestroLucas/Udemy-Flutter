@@ -1,16 +1,31 @@
-# dashboard_responsive
+# Responsive Dashboard
 
-A new Flutter project.
+## What i've learned?
 
-## Getting Started
+1. How to create an responsive layout by define the layout structure that each
+device - web, tablet, phone - will use;
 
-This project is a starting point for a Flutter application.
+   - Using different layout structures by creating a class called `responsive.dart`.
 
-A few resources to get you started if this is your first Flutter project:
+2. Create and use a `app_colors.dart` that contains all the colors the app will use;
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+   - Need to improve the use of constraints in the app.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. How to use the [FL_CHART](https://pub.dev/packages/fl_chart) flutter package;
+
+   - Pie chart
+   - Line chart
+   - Bar chart
+
+4. Use of `models` and `data` classes to structure and populate the charts in the app;
+
+5. Sometimes, for a more flexible AppBar, is recommended to create your own and
+call the AppBar function when needed.
+
+```dart
+if (!Responsive.isDesktop(context))
+    child: InkWell(
+        onTap: () => Scaffold.of(context).openDrawer(),
+        // Simulate the APPBAR function of openDrawer
+        ...
+```

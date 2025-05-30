@@ -9,6 +9,7 @@ class HeaderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
       children: [
         if (!Responsive.isDesktop(context))
           Padding(    
@@ -21,6 +22,7 @@ class HeaderWidget extends StatelessWidget {
               ),
             ),
           ),
+          
         Responsive.isMobile(context)
             ? Row(
               children: [

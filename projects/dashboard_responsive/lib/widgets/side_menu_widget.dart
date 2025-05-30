@@ -20,6 +20,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
     return Container(
       decoration: BoxDecoration(color: AppColors.bg),
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 80),
+      
       child: ListView.builder(
         itemCount: data.menu.length,
         itemBuilder:
@@ -37,6 +38,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
         color: isSelected ? AppColors.selection : Colors.transparent,
         borderRadius: BorderRadius.circular(8),
       ),
+
       child: InkWell(
         onTap:
             () => setState(() {
@@ -52,6 +54,7 @@ class _SideMenuWidgetState extends State<SideMenuWidget> {
                 color: isSelected ? AppColors.black : AppColors.secondary,
               ),
             ),
+            
             Text(
               item.title,
               style: TextStyle(

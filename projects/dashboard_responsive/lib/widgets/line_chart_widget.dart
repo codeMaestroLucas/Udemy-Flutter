@@ -17,18 +17,20 @@ class LineChartWidget extends StatelessWidget {
     return CustomCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+
         children: [
           const Text(
             "Steps Overview",
             style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
           ),
+          
           const SizedBox(height: 20),
           AspectRatio(
             aspectRatio: 16 / 6,
             child: LineChart(
               LineChartData(
                 clipData:
-                    FlClipData.all(), // to make the data crop inside the graph
+                    FlClipData.all(), //* to make the data crop inside the graph
                 lineTouchData: LineTouchData(handleBuiltInTouches: true),
                 gridData: FlGridData(show: false),
                 titlesData: FlTitlesData(

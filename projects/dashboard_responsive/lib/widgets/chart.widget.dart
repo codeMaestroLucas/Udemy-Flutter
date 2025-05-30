@@ -11,6 +11,7 @@ class Chart extends StatelessWidget {
 
     return SizedBox(
       height: 200,
+
       child: Stack(
         children: [
           PieChart(
@@ -21,9 +22,11 @@ class Chart extends StatelessWidget {
               sections: pieChartData.pieChartSectionDatas,
             ),
           ),
+
           Positioned.fill(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              
               children: [
                 const Text(
                   '70%',

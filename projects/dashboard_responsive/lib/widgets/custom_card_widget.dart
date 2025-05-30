@@ -12,8 +12,10 @@ class CustomCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(color: color ?? AppColors.cardBg),
+
       child: Padding(
         padding: padding ?? const EdgeInsets.all(12),
+        
         child: child,
       ),
     );

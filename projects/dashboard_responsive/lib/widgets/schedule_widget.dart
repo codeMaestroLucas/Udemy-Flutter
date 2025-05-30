@@ -11,6 +11,7 @@ class ScheduleWidget extends StatelessWidget {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+
       children: [
         const Text(
           'Scheduled',
@@ -24,9 +25,11 @@ class ScheduleWidget extends StatelessWidget {
             color: Colors.black,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+
                   children: [
                     Text(
                       data.schedules[index].title,
@@ -35,6 +38,7 @@ class ScheduleWidget extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
+
                     const SizedBox(height: 2),
                     Text(
                       data.schedules[index].date,
@@ -46,6 +50,7 @@ class ScheduleWidget extends StatelessWidget {
                     ),
                   ],
                 ),
+                
                 const Icon(Icons.more),
               ],
             ),

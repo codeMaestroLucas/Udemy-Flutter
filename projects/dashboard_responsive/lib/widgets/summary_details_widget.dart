@@ -10,6 +10,7 @@ class SummaryDetailsWidget extends StatelessWidget {
       color: const Color(0xFF2F353E),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        
         children: [
           _buildDetails('Cal', '305'),
           _buildDetails('Steps', '10983'),
@@ -24,7 +25,8 @@ class SummaryDetailsWidget extends StatelessWidget {
     return Column(
       children: [
         Text(key, style: TextStyle(fontSize: 11, color: Colors.grey)),
-        SizedBox(height: 2,),
+
+        SizedBox(height: 2),
         Text(value, style: TextStyle(fontSize: 14)),
         ],
     );

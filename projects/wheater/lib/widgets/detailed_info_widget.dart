@@ -13,17 +13,21 @@ class DetailedInfoWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
       constraints: const BoxConstraints(maxWidth: 150),
+
       child: Row(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
+
         children: [
           Image.asset(item.imagePath, scale: 10),
+
           const SizedBox(width: 4),
           Flexible(
-            // Use Flexible to allow text to wrap
+            //* Use Flexible to allow text to wrap
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
+
               children: [
                 Text(
                   item.title,
@@ -34,6 +38,7 @@ class DetailedInfoWidget extends StatelessWidget {
                   ),
                   softWrap: true, // Ensure text wraps
                 ),
+                
                 const SizedBox(height: 2),
                 Text(
                   details,

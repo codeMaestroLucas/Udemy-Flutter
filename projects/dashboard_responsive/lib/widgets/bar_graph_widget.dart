@@ -22,14 +22,18 @@ class BarGraphWidget extends StatelessWidget {
         mainAxisSpacing: 12,
         childAspectRatio: 5 / 4,
       ),
+
       itemBuilder: (context, index) {
         return CustomCard(
           padding: const EdgeInsets.all(4),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
+                
                 child: Text(
                   barGraphData.data[index].label,
                   style: const TextStyle(

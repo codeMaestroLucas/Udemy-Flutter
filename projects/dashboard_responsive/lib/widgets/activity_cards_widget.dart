@@ -20,6 +20,7 @@ class ActivityCardsWidget extends StatelessWidget {
         crossAxisSpacing: isMobile ? 8 : 16,
         mainAxisSpacing: 8,
       ),
+
       itemBuilder:
           (context, index) => CustomCard(
             child: Column(
@@ -32,8 +33,10 @@ class ActivityCardsWidget extends StatelessWidget {
                   width: 30,
                   height: 30,
                 ),
+
                 Padding(
                   padding: const EdgeInsets.only(top: 16, bottom: 4),
+
                   child: Text(
                     heathDetails.heathData[index].value,
                     style: TextStyle(
@@ -43,6 +46,7 @@ class ActivityCardsWidget extends StatelessWidget {
                     ),
                   ),
                 ),
+                
                 Text(
                   heathDetails.heathData[index].title,
                   style: TextStyle(

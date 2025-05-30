@@ -14,16 +14,21 @@ class DashBordWidget extends StatelessWidget {
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
+
         child: Column(
           children: [
             const SizedBox(height: 16),
             HeaderWidget(),
+
             const SizedBox(height: 16),
             ActivityCardsWidget(),
+
             const SizedBox(height: 16),
             LineChartWidget(),
+
             const SizedBox(height: 16),
             BarGraphWidget(),
+            
             const SizedBox(height: 16),
             if (Responsive.isTablet(context)) const SummaryWidget(),
           ],

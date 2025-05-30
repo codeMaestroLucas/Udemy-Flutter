@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:wheater/bloc/weather_bloc.dart';
 import 'package:wheater/screens/main_screen.dart';
-
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:wheater/theme/app_colors.dart';
 
 Future<void> main() async {
   await dotenv.load(fileName: ".env"); // Load .env file
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  //* Locking the orientation of the Screen to be just portrait
+  SystemChrome.setPreferredOrientations([
+    //! Comment to adjust the layout to Portrait and Landscape modes
+    // DeviceOrientation.portraitUp,
+    // DeviceOrientation.portraitDown,
+  ]).then((_) {
+    runApp(MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -17,31 +27,38 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-			debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       home: FutureBuilder(
-				future: _determinePosition(),
-        
+        future: _determinePosition(),
+
         builder: (context, snap) {
-					if(snap.hasData) {
-						return BlocProvider<WeatherBloc>(
-							create: (context) => WeatherBloc()..add(
-								FecthWeather(snap.data as Position)
-							),
-							child: const MainScreen(),
-						);
-					} else {
-						return const Scaffold(
-							body: Center(
-								child: CircularProgressIndicator(),
-							),
-						);
-					}
-        }
-      )
+          if (snap.hasData) {
+            return BlocProvider<WeatherBloc>(
+              create:
+                  (context) =>
+                      WeatherBloc()..add(FecthWeather(snap.data as Position)),
+              child: const MainScreen(),
+            );
+          } else {
+            return Scaffold(
+              body: Container(
+                color: AppColors.bgColor,
+                child: Center(
+                  child: CircularProgressIndicator(
+                    backgroundColor: AppColors.purple,
+                    color: AppColors.amber,
+                  ),
+                ),
+              ),
+            );
+          }
+        },
+      ),
     );
   }
 }
 
+//! Copy and past this code from the documentation
 /// Determine the current position of the device.
 ///
 /// When the location services are not enabled or permissions
@@ -54,7 +71,7 @@ Future<Position> _determinePosition() async {
   serviceEnabled = await Geolocator.isLocationServiceEnabled();
   if (!serviceEnabled) {
     // Location services are not enabled don't continue
-    // accessing the position and request users of the 
+    // accessing the position and request users of the
     // App to enable the location services.
     return Future.error('Location services are disabled.');
   }
@@ -65,18 +82,19 @@ Future<Position> _determinePosition() async {
     if (permission == LocationPermission.denied) {
       // Permissions are denied, next time you could try
       // requesting permissions again (this is also where
-      // Android's shouldShowRequestPermissionRationale 
+      // Android's shouldShowRequestPermissionRationale
       // returned true. According to Android guidelines
       // your App should show an explanatory UI now.
       return Future.error('Location permissions are denied');
     }
   }
-  
+
   if (permission == LocationPermission.deniedForever) {
-    // Permissions are denied forever, handle appropriately. 
+    // Permissions are denied forever, handle appropriately.
     return Future.error(
-      'Location permissions are permanently denied, we cannot request permissions.');
-  } 
+      'Location permissions are permanently denied, we cannot request permissions.',
+    );
+  }
 
   // When we reach here, permissions are granted and we can
   // continue accessing the position of the device.

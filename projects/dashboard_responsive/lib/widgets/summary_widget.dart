@@ -10,22 +10,30 @@ class SummaryWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(color: AppColors.bg),
+
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            SizedBox(height: 20),
-            Chart(),
-            Text(
-              'Summary',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-            ),
-            SizedBox(height: 16),
-            SummaryDetailsWidget(),
-            SizedBox(height: 40),
-            ScheduleWidget(),
-          ],
+
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              Chart(),
+
+              Text(
+                'Summary',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+              ),
+
+              SizedBox(height: 16),
+              SummaryDetailsWidget(),
+              
+              SizedBox(height: 40),
+              ScheduleWidget(),
+            ],
+          ),
         ),
       ),
     );

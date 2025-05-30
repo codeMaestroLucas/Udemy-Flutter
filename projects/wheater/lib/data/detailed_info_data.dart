@@ -16,7 +16,7 @@ class DetailedInfoData {
     ),
     DetailedInfosModel(
       imagePath: 'assets/detailed_info_icons/min_temp.png',
-      title: 'Max Temperature',
+      title: 'Min Temperature',
     ),
   ];
 }

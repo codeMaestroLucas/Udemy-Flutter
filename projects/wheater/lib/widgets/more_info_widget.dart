@@ -11,20 +11,19 @@ class MoreInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final weather = (state as WeatherSucesses).weather;
+    final weather = (state as WeatherSucesse).weather;
     final data = DetailedInfoData().data;
 
     // Helper function to safely format time
     String formatTime(DateTime? time) {
-      return time != null 
-          ? DateFormat.jm().format(time)
-          : '--:--';
+      return time != null ? DateFormat.jm().format(time) : '--:--';
     }
 
     return Column(
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
           children: [
             Expanded(
               child: DetailedInfoWidget(
@@ -32,6 +31,7 @@ class MoreInfoWidget extends StatelessWidget {
                 details: formatTime(weather.sunrise),
               ),
             ),
+
             Expanded(
               child: DetailedInfoWidget(
                 item: data[1],
@@ -40,12 +40,15 @@ class MoreInfoWidget extends StatelessWidget {
             ),
           ],
         ),
+
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 4),
           child: const Divider(color: Colors.grey, thickness: 0.5),
         ),
+
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
           children: [
             Expanded(
               child: DetailedInfoWidget(
@@ -53,6 +56,7 @@ class MoreInfoWidget extends StatelessWidget {
                 details: '${weather.tempMax?.celsius?.round() ?? '--'}°C',
               ),
             ),
+            
             Expanded(
               child: DetailedInfoWidget(
                 item: data[3],

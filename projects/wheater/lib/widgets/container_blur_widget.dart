@@ -24,7 +24,7 @@ class ContainerBlurWidget extends StatelessWidget {
   static List<Widget> defaultBlurBlocks() {
     return [
       ContainerBlurWidget(
-        posX: 50,
+        posX: 12,
         posY: -0.3,
         height: 300,
         width: 300,
@@ -32,7 +32,7 @@ class ContainerBlurWidget extends StatelessWidget {
         sqareShape: false,
       ),
       ContainerBlurWidget(
-        posX: -50,
+        posX: -12,
         posY: -0.3,
         height: 300,
         width: 300,
@@ -54,6 +54,7 @@ class ContainerBlurWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: AlignmentDirectional(posX, posY),
+      
       child: Container(
         height: height,
         width: width,
